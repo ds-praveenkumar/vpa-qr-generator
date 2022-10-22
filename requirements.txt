@@ -1,0 +1,4 @@
+pyqrcode
+pypng
+streamlit
+matplotlib
