@@ -5,10 +5,13 @@ import json
 import base64
 import time
 from decimal import *
-st.set_page_config()
+
 
 name = "Art4Shine"
 vpa= "praveenkr2208@okhdfcbank"
+
+img = Image.open('icon.jpeg')
+st.set_page_config( page_title="Art4Shine.com", page_icon=img) 
 
 def generate_qr(amount):
 
@@ -54,5 +57,28 @@ with st.form(key='payment'):
             print('QR Code generated')
         else:
             st.exception("Enter valid amount like 20.00 in INR")
+
+padding = 0
+st.markdown(f""" <style>
+    .reportview-container .main .block-container{{
+        padding-top: {padding}rem;
+        padding-right: {padding}rem;
+        padding-left: {padding}rem;
+        padding-bottom: {padding}rem;
+    }} </style> """, unsafe_allow_html=True)
+
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden; }
+        footer {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+footer_note = """
+
+	Copyright Art4Shine.com © 2022
+
+"""
+st.markdown( footer_note, unsafe_allow_html=False)
             
     
