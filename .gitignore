@@ -6,6 +6,16 @@ __pycache__/
 # C extensions
 *.so
 
+# node
+ 
+frontend/node_modules
+frontend/src
+frontend/*.json
+frontend/*.js
+frontend/*.md
+
+
+
 # Distribution / packaging
 .Python
 build/
