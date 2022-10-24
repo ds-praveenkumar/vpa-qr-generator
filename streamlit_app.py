@@ -3,9 +3,6 @@ from PIL import Image
 import requests
 import json
 import base64
-import time
-from decimal import *
-
 
 name = "Art4Shine"
 vpa= "praveenkr2208@okhdfcbank"
@@ -47,7 +44,7 @@ with st.form(key='payment'):
     st.markdown(f'<h1 style="color:#33ffd7;font-size:24px;">{"Art4Shine Payment link "}</h1>', unsafe_allow_html=True)
     customer_name = st.text_input("Customer Name")
     amount = st.text_input("Amount")
-
+    st.image('https://miro.medium.com/max/875/1*BOrZtZYRwGEe8NlavcSzRA.png', width=200)
     if st.form_submit_button("submit"):
         amount = '{0:.2f}'.format(float(amount))
         if (float(amount) > 0.0)  : 
@@ -55,8 +52,13 @@ with st.form(key='payment'):
             render_svg(img_data)
             st.balloons()
             print('QR Code generated')
+            href = f'<a href="upi://pay?pa={vpa};pn={name} &amp;cu=INR;am={amount}" class="btn btn-primary">Pay Now !</a>'
+            st.write(href, unsafe_allow_html=True) 
         else:
             st.exception("Enter valid amount like 20.00 in INR")
+    
+
+
 
 padding = 0
 st.markdown(f""" <style>
