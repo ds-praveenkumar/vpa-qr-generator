@@ -1,2 +1,4 @@
 streamlit
 streamlit_option_menu
+extra_streamlit_components
+streamlit_elements
